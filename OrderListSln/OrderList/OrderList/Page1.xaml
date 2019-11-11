@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="OrderList1.Page1"
+             Title="Billing Info">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Name" FontSize="Subtitle" />
+            <Entry Text="{Binding Name}"/>
+
+            <Label Text="Gender: Male/Female" FontSize="Subtitle"/>
+            <Entry Text="{Binding Gender}" />
+
+            <Label Text="Size: S, M, L, XL"/>
+            <Entry Text="{Binding Size}"/>
+
+            <Label Text="Date Ordered:" FontSize="Subtitle"/>
+            <StackLayout>
+
+                <DatePicker Format="D"
+                    VerticalOptions="CenterAndExpand"
+                    Margin="10, 0"
+                            />
+            </StackLayout>
+
+
+            <Label Text="Color: Black, Blue or White" FontSize="Subtitle"/>
+            <Entry Text="{Binding Color}"/>
+
+
+            <Label Text="Address:" FontSize="Subtitle"/>
+            <Entry Text="{Binding Address}"/>
+            
+            <Button x:Name="SaveButton" Text="Check Out" Clicked="OnSaveClicked"/>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

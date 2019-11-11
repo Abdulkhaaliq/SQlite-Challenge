@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="OrderList.MainPage"
+             BackgroundColor="Black"
+             Title="Browse">
+
+    <ScrollView>
+    <FlexLayout Direction="Column"
+                AlignItems="Center"
+                JustifyContent="SpaceAround">
+
+        <Label Text="Unisex Hoodie"
+               FontSize="Large" />
+
+        <Image Source="hoodie0.jpg" />
+
+        <Image Source="hoodie1.jpg" />
+      
+        <Image Source="hoodie2.jpg" />
+
+        <Button x:Name="BuyNow" Text="Buy now" Clicked="BuyNow_Clicked" />
+
+        </FlexLayout>
+    </ScrollView>
+</ContentPage>
