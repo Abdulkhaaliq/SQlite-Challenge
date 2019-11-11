@@ -24,11 +24,11 @@
                 <DatePicker Format="D"
                     VerticalOptions="CenterAndExpand"
                     Margin="10, 0"
-                            />
+                      BindingContext="{Binding DateOrdered}"      />
             </StackLayout>
 
 
-            <Label Text="Color: Black, Blue or White" FontSize="Subtitle"/>
+            <Label Text="Color: Black or White" FontSize="Subtitle"/>
             <Entry Text="{Binding Color}"/>
 
 
@@ -36,7 +36,8 @@
             <Entry Text="{Binding Address}"/>
             
             <Button x:Name="SaveButton" Text="Check Out" Clicked="OnSaveClicked"/>
-            
+            <Button x:Name="Back" Text="Back to Browse" Clicked="Back_Clicked"/>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
