@@ -14,9 +14,9 @@ namespace OrderListdatabase
 
         public string Name { get; set; }
         public string Gender { get; set; }
-        public int Size { get; set; }
+        public string Size { get; set; }
         public DateTime DateOrdered { get; set; }
-        public int Color { get; set; }
+        public string Color { get; set; }
         public string Address { get; set; }
     }
 }

@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using OrderList1;
 using OrderListdatabase;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using static Android.App.LauncherActivity;
 
 namespace OrderList
 {
