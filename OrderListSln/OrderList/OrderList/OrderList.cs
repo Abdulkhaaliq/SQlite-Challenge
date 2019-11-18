@@ -16,6 +16,7 @@ namespace OrderListdatabase
             database.CreateTableAsync<Info>().Wait();
         }
         public Task<List<Info>> GetItemsAsync()
+
         {           
             return database.Table<Info>().ToListAsync();
         }

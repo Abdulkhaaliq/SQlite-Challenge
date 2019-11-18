@@ -31,12 +31,15 @@ namespace OrderList
             });
         }
 
-
-
-        private async void BuyNow_Clicked(object sender, EventArgs e)
+        private async void ImageButton_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new Page1());
 
+        }
+
+        private async void Orders_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Page2());
         }
     }
 }

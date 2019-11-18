@@ -8,21 +8,43 @@
              BackgroundColor="Black"
              Title="Browse">
 
+
     <ScrollView>
-    <FlexLayout Direction="Column"
+
+        <FlexLayout  Direction="Column"
                 AlignItems="Center"
                 JustifyContent="SpaceAround">
+            <StackLayout>
+                <Frame BackgroundColor="LightBlue">
+                <ImageButton Source="hoodie0.jpg"
+                WidthRequest="240"
+                HeightRequest="180"
+                         Clicked="ImageButton_Clicked"/>
+                </Frame>
+            </StackLayout>
 
-        <Label Text="Unisex Hoodie"
-               FontSize="Large" />
+            <StackLayout>
+                <Frame BackgroundColor="LightBlue">
+                    <ImageButton Source="hoodie1.jpg"
+                WidthRequest="240"
+                HeightRequest="180"
+                             Clicked="ImageButton_Clicked"/>
+                </Frame>
+            </StackLayout>
 
-        <Image Source="hoodie0.jpg" />
+            <StackLayout>
+                <Frame BackgroundColor="LightBlue">
+                    <ImageButton Source="hoodie2.jpg"
+                WidthRequest="240"
+                HeightRequest="180" 
+                          Clicked="ImageButton_Clicked"/>
+                </Frame>
+                <StackLayout>
+                    <Button x:Name="Orders" Text="View Your Orders" Clicked="Orders_Clicked"/>
+                </StackLayout>
 
-        <Image Source="hoodie1.jpg" />
-      
-        <Image Source="hoodie2.jpg" />
-
-        <Button x:Name="BuyNow" Text="Buy now" Clicked="BuyNow_Clicked" />
+            </StackLayout>
+        
 
         </FlexLayout>
     </ScrollView>

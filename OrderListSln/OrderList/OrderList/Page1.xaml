@@ -8,36 +8,32 @@
              Title="Billing Info">
 
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Name" FontSize="Subtitle" />
-            <Entry Text="{Binding Name}"/>
+        <ScrollView>
+                        <StackLayout BackgroundColor="#eee" Orientation="Vertical">
+                            <Label Text="Name" FontSize="Subtitle" />
+                            <Entry Text="{Binding Name}"/>
 
-            <Label Text="Gender: Male/Female" FontSize="Subtitle"/>
-            <Entry Text="{Binding Gender}" />
+                  
+                                <Label Text="Gender: Male/Female" FontSize="Subtitle"/>
+                                <Entry Text="{Binding Gender}" />
+          
 
-            <Label Text="Size: S, M, L, XL"/>
-            <Entry Text="{Binding Size}"/>
+                            <Label Text="Size: S, M, L, XL"/>
+                            <Entry Text="{Binding Size}"/>
 
-            <Label Text="Date Ordered:" FontSize="Subtitle"/>
-            <StackLayout>
+                            <Label Text="Date Ordered: DD/MM/CCYY" FontSize="Subtitle"/>
+                            <Entry Text="{Binding DateOrdered}"/>
 
-                <DatePicker Format="D"
-                    VerticalOptions="CenterAndExpand"
-                    Margin="10, 0"
-                      BindingContext="{Binding DateOrdered}"      />
-            </StackLayout>
-
-
-            <Label Text="Color: Black or White" FontSize="Subtitle"/>
-            <Entry Text="{Binding Color}"/>
+                            <Label Text="Color: Black or White" FontSize="Subtitle"/>
+                            <Entry Text="{Binding Color}"/>
 
 
-            <Label Text="Address:" FontSize="Subtitle"/>
-            <Entry Text="{Binding Address}"/>
-            
-            <Button x:Name="SaveButton" Text="Check Out" Clicked="OnSaveClicked"/>
-            <Button x:Name="Back" Text="Back to Browse" Clicked="Back_Clicked"/>
-
-        </StackLayout>
+                            <Label Text="Address:" FontSize="Subtitle"/>
+                            <Entry Text="{Binding Address}"/>
+                               
+                            <Button x:Name="PostButton" Text="Post" Clicked="PostButton_Clicked"/>
+                            <Button x:Name="SaveButton" Text="Check Out" Clicked="OnSaveClicked"/>
+                        </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
