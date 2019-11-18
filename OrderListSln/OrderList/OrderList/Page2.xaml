@@ -7,7 +7,7 @@
              x:Class="OrderList.Page2"
              Title="Your Orders">
     <ContentPage.Content>
-        <ListView  x:Name="listView" ItemsSource="{Binding Orders}" ItemSelected="listView_ItemSelected">
+        <ListView  x:Name="listView" ItemsSource="{Binding Orders}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -19,17 +19,21 @@
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
-                            <StackLayout Grid.Row="0" Grid.Column="0" >
-                            </StackLayout>
-                            <StackLayout Grid.Row="0" Grid.Column="0" VerticalOptions="Center">
-                                <Label Text="{Binding Name}" Font="20"/>
-                                <Label Text="{Binding Gender}" Font="20"/>
-                                <Label Text="{Binding Size} " Font="20" />
-                                <Label Text="{Binding DateOrdered} " Font="20" />
-                                <Label Text="{Binding Color} " Font="20" />
-                                <Label Text="{Binding Address} " Font="20" />
 
-                            </StackLayout>
+                            <Label Text="Name" FontAttributes="Bold" Grid.Row="0" Grid.Column="0"/>
+                            <Label Text="{Binding Name}"  Grid.Row="1" Grid.Column="0"/>
+                            <Label Text="Gender" FontAttributes="Bold" Grid.Row="0" Grid.Column="1"/>
+                            <Label Text="{Binding Gender}" Grid.Row="1" Grid.Column="1" />
+                            <Label Text="Size" FontAttributes="Bold" Grid.Row="0" Grid.Column="2"/>
+                            <Label Text="{Binding Size}"  Grid.Row="1" Grid.Column="2"/>
+                            <Label Text="Color" FontAttributes="Bold" Grid.Row="0" Grid.Column="3"/>
+                            <Label Text="{Binding Color}"  Grid.Row="1" Grid.Column="3"/>
+                            <Label Text="Order Date" FontAttributes="Bold" Grid.Row="0" Grid.Column="4"/>
+                            <Label Text="{Binding DateOrdered}"  Grid.Row="1" Grid.Column="4"/>
+                            <Label Text="Shipping Address" FontAttributes="Bold" Grid.Row="0" Grid.Column="5"/>
+                            <Label Text="{Binding Address}"  Grid.Row="1" Grid.Column="5"/>
+                            
+                        
                         </Grid>
                     </ViewCell>
                 </DataTemplate>

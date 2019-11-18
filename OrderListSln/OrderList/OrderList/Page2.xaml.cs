@@ -28,9 +28,6 @@ namespace OrderList
             BindingContext = this;
         }
 
-        private void listView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
-        {
-
-        }
+       
     }
 }
