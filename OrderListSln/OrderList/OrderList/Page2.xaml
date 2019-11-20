@@ -5,9 +5,10 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="OrderList.Page2"
-             Title="Your Orders">
+             Title="Your Orders"
+             BackgroundColor="Black">
     <ContentPage.Content>
-        <ListView  x:Name="listView" ItemsSource="{Binding Orders}">
+        <ListView  x:Name="listView" ItemsSource="{Binding Orders}" ItemSelected="listView_ItemSelected" HasUnevenRows="True" Margin="5">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -16,24 +17,29 @@
                                 <RowDefinition Height="*" />
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="2*" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
 
-                            <Label Text="Name" FontAttributes="Bold" Grid.Row="0" Grid.Column="0"/>
-                            <Label Text="{Binding Name}"  Grid.Row="1" Grid.Column="0"/>
-                            <Label Text="Gender" FontAttributes="Bold" Grid.Row="0" Grid.Column="1"/>
-                            <Label Text="{Binding Gender}" Grid.Row="1" Grid.Column="1" />
-                            <Label Text="Size" FontAttributes="Bold" Grid.Row="0" Grid.Column="2"/>
-                            <Label Text="{Binding Size}"  Grid.Row="1" Grid.Column="2"/>
-                            <Label Text="Color" FontAttributes="Bold" Grid.Row="0" Grid.Column="3"/>
-                            <Label Text="{Binding Color}"  Grid.Row="1" Grid.Column="3"/>
-                            <Label Text="Order Date" FontAttributes="Bold" Grid.Row="0" Grid.Column="4"/>
-                            <Label Text="{Binding DateOrdered}"  Grid.Row="1" Grid.Column="4"/>
-                            <Label Text="Shipping Address" FontAttributes="Bold" Grid.Row="0" Grid.Column="5"/>
-                            <Label Text="{Binding Address}"  Grid.Row="1" Grid.Column="5"/>
-                            
-                        
+                            <Label Text="Name" FontAttributes="Bold" Grid.Row="0" Grid.Column="0" TextColor="WhiteSmoke"/>
+                            <Label Text="Gender" FontAttributes="Bold" Grid.Row="0" Grid.Column="1" TextColor="WhiteSmoke"/>
+                            <Label Text="Size" FontAttributes="Bold" Grid.Row="0" Grid.Column="2" TextColor="WhiteSmoke"/>
+                            <Label Text="Color" FontAttributes="Bold" Grid.Row="0" Grid.Column="3" TextColor="WhiteSmoke"/>
+                            <Label Text="Order Date" FontAttributes="Bold" Grid.Row="0" Grid.Column="4" TextColor="WhiteSmoke"/>
+                            <Label Text="Shipping Address" FontAttributes="Bold" Grid.Row="0" Grid.Column="5" TextColor="WhiteSmoke"/>
+
+                            <Label Text="{Binding Name}"  Grid.Row="1" Grid.Column="0" TextColor="Wheat"/>
+
+                            <Label Text="{Binding Gender}" Grid.Row="1" Grid.Column="1" TextColor="Wheat"/>
+
+                            <Label Text="{Binding Size}"  Grid.Row="1" Grid.Column="2" TextColor="Wheat"/>
+
+                            <Label Text="{Binding Color}"  Grid.Row="1" Grid.Column="3" TextColor="Wheat"/>
+
+                            <Label Text="{Binding DateOrdered}"  Grid.Row="1" Grid.Column="4" TextColor="Wheat"/>
+
+                            <Label Text="{Binding Address}"  Grid.Row="1" Grid.Column="5" TextColor="Wheat"/>
+
                         </Grid>
                     </ViewCell>
                 </DataTemplate>

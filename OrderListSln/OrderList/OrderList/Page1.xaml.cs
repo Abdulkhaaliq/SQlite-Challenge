@@ -2,13 +2,13 @@
 using OrderListdatabase;
 using System;
 using System.Collections.Generic;
-using System.Linq;
+using Xamarin.Essentials;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using System.Threading;
 
 namespace OrderList1
 {
@@ -23,11 +23,9 @@ namespace OrderList1
 
             var purchaseItem = new Info();
             BindingContext = purchaseItem;
+         
         }
-
        
-
-
         private async void OnSaveClicked(object sender, EventArgs e)
         {
             
@@ -58,6 +56,7 @@ namespace OrderList1
             {
                 await DisplayAlert("Exception", "Try Again", "Ok");
             }
-        }   
+        }
+        
     }
 }           

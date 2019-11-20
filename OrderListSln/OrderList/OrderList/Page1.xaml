@@ -24,13 +24,12 @@
                             <Label Text="Date Ordered: DD/MM/CCYY" FontSize="Subtitle"/>
                             <Entry Text="{Binding DateOrdered}"/>
 
+                             <Label Text="Address:" />
+                             <Entry Text="{Binding Address}" />
+                      
                             <Label Text="Color: Black or White" FontSize="Subtitle"/>
                             <Entry Text="{Binding Color}"/>
 
-
-                            <Label Text="Address:" FontSize="Subtitle"/>
-                            <Entry Text="{Binding Address}"/>
-                               
                             <Button x:Name="PostButton" Text="Post" Clicked="PostButton_Clicked"/>
                             <Button x:Name="SaveButton" Text="Check Out" Clicked="OnSaveClicked"/>
                         </StackLayout>

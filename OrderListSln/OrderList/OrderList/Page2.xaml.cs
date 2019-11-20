@@ -7,6 +7,7 @@ using OrderList1;
 using OrderListdatabase;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Xamarin.Essentials;
 
 namespace OrderList
 {
@@ -27,7 +28,18 @@ namespace OrderList
             Orders = await tshirts.GetItemsAsync();
             BindingContext = this;
         }
-
-       
+      
+        private async void listView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            var tshirtInfo = App.Database;
+            Orders = await tshirtInfo.GetItemsAsync();
+            var getAddress = string.Empty;
+            foreach (var eachOrder in Orders)
+            {
+                getAddress = eachOrder.Address;
+            }
+            var geocoder = await Geocoding.GetLocationsAsync(getAddress);
+            await Map.OpenAsync(geocoder.First());
+        }
     }
 }
