@@ -15,6 +15,7 @@ namespace OrderList1
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Page1 : ContentPage
     {
+        public List<Info> tshirtInfo { get; set; }
 
         public Page1()
         {
@@ -42,10 +43,17 @@ namespace OrderList1
             var client = new HttpClient(new HttpClientHandler());
             var url = "http://10.0.2.2:5000/Tshirt";
 
-            var info = new Info();
+            var info = App.Database;
 
-            var json = JsonConvert.SerializeObject(info);
+            tshirtInfo = await info.GetItemsAsync();
+
+
+            var json = JsonConvert.SerializeObject(tshirtInfo);
             var content = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
+            var response = await client.PostAsync(url, content);
+            await DisplayAlert("Response Message", response.ReasonPhrase, "Ok");
+
+            /*
             try
             {
                 var response = await client.PostAsync(url, content);
@@ -56,6 +64,7 @@ namespace OrderList1
             {
                 await DisplayAlert("Exception", "Try Again", "Ok");
             }
+            */
         }
         
     }
