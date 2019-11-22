@@ -29,13 +29,18 @@ namespace OrderList1
        
         private async void OnSaveClicked(object sender, EventArgs e)
         {
-            
-            var purchaseItem = BindingContext as Info;
-            var pathdb = App.Database;
-            await pathdb.SaveItemAsync(purchaseItem);
+
+            GetSave();
             await DisplayAlert("Purchase Successfull", "Saved (View in Orders)", "Ok");
             await Navigation.PushAsync(new MainPage());
 
+        }
+
+        public async void GetSave()
+        {
+            var purchaseItem = BindingContext as Info;
+            var pathdb = App.Database;
+            await pathdb.SaveItemAsync(purchaseItem);
         }
 
         private async void PostButton_Clicked(object sender, EventArgs e)
@@ -50,10 +55,7 @@ namespace OrderList1
 
             var json = JsonConvert.SerializeObject(tshirtInfo);
             var content = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
-            var response = await client.PostAsync(url, content);
-            await DisplayAlert("Response Message", response.ReasonPhrase, "Ok");
-
-            /*
+                       
             try
             {
                 var response = await client.PostAsync(url, content);
@@ -64,8 +66,7 @@ namespace OrderList1
             {
                 await DisplayAlert("Exception", "Try Again", "Ok");
             }
-            */
-        }
-        
+            
+        }     
     }
 }           

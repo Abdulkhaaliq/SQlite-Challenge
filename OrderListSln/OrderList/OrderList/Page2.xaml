@@ -7,11 +7,23 @@
              x:Class="OrderList.Page2"
              Title="Your Orders"
              BackgroundColor="Black">
+  
+
     <ContentPage.Content>
-        <ListView  x:Name="listView" ItemsSource="{Binding Orders}" ItemSelected="listView_ItemSelected" HasUnevenRows="True" Margin="5">
+        <ListView  x:Name="listView" ItemsSource="{Binding Orders}" HasUnevenRows="True" Margin="5">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
+                        
+                        <ViewCell.ContextActions>
+                            <MenuItem Clicked="Maping"
+                                      CommandParameter="{Binding .}"
+                      Text="Map" />
+                            <MenuItem Clicked="OnDelete"
+                                      CommandParameter="{Binding .}"
+                      Text="Delete"  IsDestructive="True" />
+                        </ViewCell.ContextActions>
+                        
                         <Grid ColumnSpacing="0" RowSpacing="0">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*" />

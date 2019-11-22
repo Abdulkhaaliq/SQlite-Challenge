@@ -40,5 +40,9 @@ namespace OrderListdatabase
                 return database.InsertAsync(item);
             }
         }
+        public async void DeleteItemsAsync(Info item)
+        {
+            await database.DeleteAsync(item);
+        }
     }
 }

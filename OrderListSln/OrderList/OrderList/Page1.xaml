@@ -22,7 +22,7 @@
                             <Entry Text="{Binding Size}"/>
 
                             <Label Text="Date Ordered: DD/MM/CCYY" FontSize="Subtitle"/>
-                            <Entry Text="{Binding DateOrdered}"/>
+                            <DatePicker Date="{Binding DateOrdered}"/>
 
                              <Label Text="Address:" />
                              <Entry Text="{Binding Address}" />

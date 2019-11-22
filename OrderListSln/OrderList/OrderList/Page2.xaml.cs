@@ -8,17 +8,21 @@ using OrderListdatabase;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Xamarin.Essentials;
+using System.Collections.ObjectModel;
+using System.Windows.Input;
 
 namespace OrderList
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Page2 : ContentPage
     {
+
         public List<Info> Orders { get; set; }
 
         public Page2()
         {
             InitializeComponent();
+
         }
 
         protected override async void OnAppearing()
@@ -29,7 +33,19 @@ namespace OrderList
             BindingContext = this;
         }
       
-        private async void listView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+     
+
+        private  void OnDelete(object sender, EventArgs e)
+        {
+            var menuItem = sender as MenuItem;
+
+            var purchaseItem = menuItem.CommandParameter as Info;
+             App.Database.DeleteItemsAsync(purchaseItem);
+
+    
+        }
+ 
+        private async void Maping(object sender, EventArgs e)
         {
             var tshirtInfo = App.Database;
             Orders = await tshirtInfo.GetItemsAsync();
@@ -39,7 +55,10 @@ namespace OrderList
                 getAddress = eachOrder.Address;
             }
             var geocoder = await Geocoding.GetLocationsAsync(getAddress);
-            await Map.OpenAsync(geocoder.First());
+            await Map.OpenAsync(geocoder.FirstOrDefault());
         }
+
+      
+
     }
 }
